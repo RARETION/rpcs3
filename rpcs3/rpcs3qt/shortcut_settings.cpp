@@ -39,6 +39,8 @@ void fmt_class_string<shortcut>::format(std::string& out, u64 arg)
 		case shortcut::gw_volume_down: return "gw_volume_down";
 		case shortcut::gw_toggle_mouse_gyro: return "gw_toggle_mouse_gyro";
 		case shortcut::count: return "count";
+		case shortcut::mw_refresh: return "mw_refresh";
+		case shortcut::mw_reload_pads: return "mw_reload_pads";
 		}
 
 		return unknown;
@@ -90,6 +92,8 @@ shortcut_settings::shortcut_settings()
 		{ shortcut::gw_volume_up, shortcut_info{ "gw_volume_up", tr("Volume Up"), "Ctrl+Shift++", shortcut_handler_id::game_window, true } },
 		{ shortcut::gw_volume_down, shortcut_info{ "gw_volume_down", tr("Volume Down"), "Ctrl+Shift+-", shortcut_handler_id::game_window, true } },
 		{ shortcut::gw_toggle_mouse_gyro, shortcut_info{ "gw_toggle_mouse_gyro", tr("Toggle Mouse-based Gyro"), "Ctrl+G", shortcut_handler_id::game_window, false } },
+		{ shortcut::mw_refresh, shortcut_info{ "main_window_refresh", tr("Refresh"), "Ctrl+F5", shortcut_handler_id::main_window, false } },
+		{ shortcut::mw_reload_pads, shortcut_info{ "main_window_reload_pads", tr("Reload Pads"), "F1", shortcut_handler_id::main_window, false } },
 	})
 {
 }
