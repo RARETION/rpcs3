@@ -396,16 +396,16 @@ void main_window::handle_shortcut(gui::shortcuts::shortcut shortcut_key, const Q
 			Emu.Run(true);
 		break;
 	}
-	case gui::shortcuts::shortcut::mw_restart:
-	{
-		if (!Emu.GetBoot().empty())
-			Emu.Restart();
-		break;
-	}
 	case gui::shortcuts::shortcut::mw_stop:
 	{
 		if (status != system_state::stopped)
 			Emu.GracefulShutdown(false, true);
+		break;
+	}
+	case gui::shortcuts::shortcut::mw_reload_pads:
+	{
+		pad_settings_dialog dlg(m_gui_settings, this);
+		dlg.exec();
 		break;
 	}
 	default:
